@@ -1,0 +1,23 @@
+[
+  {
+    "function": "minecraft:set_name",
+    "entity": "this",
+    "name": [
+      {
+        "score": {
+          "name": "@s",
+          "objective": "iec"
+        },
+        "color": "white",
+        "italic": false,
+        "extra": [
+          {
+            "text": "ページ目",
+            "color": "white",
+            "italic": false
+          }
+        ]
+      }
+    ]
+  }
+]

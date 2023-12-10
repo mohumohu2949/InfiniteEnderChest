@@ -20,7 +20,7 @@
     # Slotを削除
         data remove storage iec: Summon.Item.Slot
     # 適当なアイテムをsummon
-        execute at @s run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:stone",Count:1b},Tags:["iec.Summon"]}
+        execute if data entity @s Inventory[35] at @s run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:stone",Count:1b},Tags:["iec.Summon"]}
     # storageのdataをmodify
         data modify entity @e[limit=1,tag=iec.Summon] Item set from storage iec: Summon.Item
 

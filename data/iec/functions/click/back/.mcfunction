@@ -5,15 +5,12 @@
 # @within function iec:click/
 
 # playsound
-    playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+    execute at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 
 # シュルカーリセット
     data remove block 2949 -64 2949 Items
-# もしアイテムを持ったままボタンを押してしまっていたら
-# インベントリが埋まっていたらその場にスポーン
-    execute if data entity @s EnderItems[{Slot:26b}] run item replace block 2949 -64 2949 container.0 from entity @s enderchest.26
-    execute if data entity @s EnderItems[{Slot:26b}] unless data entity @s Inventory[35] run loot give @s mine 2949 -64 2949 debug_stick
-    execute if data entity @s EnderItems[{Slot:26b}] if data entity @s Inventory[35] run loot spawn ~ ~ ~ mine 2949 -64 2949 debug_stick
+# アイテムを持ったままボタンを押してしまった時の処理
+    execute if data entity @s EnderItems[{Slot:26b}] run function iec:click/back/error
 
 # マクロ用にscoreをstorageに移動
     execute store result storage iec: page.num int 1 run scoreboard players get @s iec

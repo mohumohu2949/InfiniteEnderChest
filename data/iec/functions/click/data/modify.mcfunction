@@ -3,6 +3,7 @@
 #   # エンダーチェストに適応
 #
 # @within function  iec:click/data/load
+#                   iec:reset
 
 # 適応
     ## 一段目
